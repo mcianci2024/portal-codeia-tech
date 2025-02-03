@@ -6,6 +6,8 @@
     "node": "20 || 22"
   },
   "scripts": {
+    "hom": "env-cmd -f .env yarn dev",
+    "server": "env-cmd -f .env yarn start",
     "dev": "yarn workspaces foreach -A --include backend --include app --parallel --jobs unlimited -v -i run start",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",
@@ -34,6 +36,8 @@
     "@backstage/cli": "^0.29.5",
     "@backstage/e2e-test-utils": "^0.1.1",
     "@playwright/test": "^1.32.3",
+    "dotenv-cli": "^8.0.0",
+    "env-cmd": "^10.1.0",
     "node-gyp": "^10.0.0",
     "prettier": "^2.3.2",
     "typescript": "~5.4.0"
