@@ -90,6 +90,20 @@ scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  providers:
+    github:
+      user-repos:
+        user: mcianci2024
+        catalogPath: '/catalog-info.yaml'
+        filters:
+          branches:
+            - main
+          repository: '.*'
+          visibility: all
+        schedule:
+          frequency: { minutes: 30 }
+          timeout: { minutes: 5 }
+        token: $GITHUB_TOKEN
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
